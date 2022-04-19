@@ -1,6 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+// function renderLicenseBadge(license) {}
+// if (!appLicense){
+//   appLicense = ''
+// };
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -15,6 +18,12 @@ function generateMarkdown(data) {
   return `
     # ${data}
     # ${data} $pjctLicenseBdg
+
+    ## License 
+    $pjctLicense}
+    $pjctLicenseLink}
+    ---
+
     ## Description
     ${data}
   
@@ -39,11 +48,7 @@ function generateMarkdown(data) {
     $pjctTest}
   
     ---
-  
-    ## License 
-    $pjctLicense}
-  
-    ---
+
   
     ## Questions
     ### Github Page
