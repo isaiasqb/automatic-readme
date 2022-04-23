@@ -1,10 +1,9 @@
-// // TODO: Include packages needed for this application
+//packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('../Develop/utils/generateMarkdown')
 
-// // TODO: Create an array of questions for user input
-// const questions = [];
+//Creates an array of questions for user input
 const askInputQuestions = () => {
 return inquirer
   .prompt([
@@ -78,70 +77,13 @@ return inquirer
     ])// end of prompt
 };
 
-// const askLicenseInfo = () => {
-//   console.log (`
-//    ==================
-//    You have a license
-//    ==================
-//   `)
-//   return inquirer.prompt([
-//     {
-//         type:'list',
-//         name:'appLicense',
-//         message:'What type of license do you have for this app?',
-//         choices: ['GNU', 'Mozilla PL', 'Apache', 'MIT', 'Boost Software', 'Unilicense']
-//     }
-//   ]);
-// };
-
-
-
-
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-
-// const generateReadMeFile = generateMarkdown(data);
-
-// fs.writeFile('../dist/project.md', generateReadMeFile, err => {
-//   if (err) throw err;
-//   console.log('test read me file generated')
-// });
-
-
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
 askInputQuestions()
-  // .then(info => {
-  //   // console.log(info)
-  //   // if (info.appIsLicense){
-  //   //   return askLicenseInfo()
-  //   // } else {
-  //   //   return
-  //   // }
-  // })
-  // .then(askLicenseInfo)
   .then(info => {
     console.log(info);
     fs.writeFile('../dist/README.md', generateMarkdown(info), err => {
         if (err) throw err;
-        console.log('test read me file generated')
+        console.log('README.md file generated. You can retreive it form the distribution folder.')
       });
   });
-
-
-
-
-//Experimental Code......
-
-
-
-
-//END of experimental code......
 
 

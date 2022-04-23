@@ -1,7 +1,7 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Creates a function that returns a license badge, license link and creates a license section
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  const types = [{
+function renderlicenseSection(license) {
+  const types = {
     'GNU': {
       name: 'General Public License (GPL)',
       badge: 'https://www.whitesourcesoftware.com/wp-content/media/2021/04/aHViPTcyNTE0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVjNDk3NmFlNDM5Y2QucG5nJnZlcnNpb249MDAwMCZzaWc9NDQ0MzgxMTNmN2U3NDliM2U1MGE2ZjNkNzA2YzU5NDA.png',
@@ -38,71 +38,61 @@ function renderLicenseBadge(license) {
       badge: 'https://www.whitesourcesoftware.com/wp-content/media/2021/04/aHViPTcyNTE0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVjNDk3OTFiMzE1ZDAucG5nJnZlcnNpb249MDAwMCZzaWc9Yzg3OTc3ZjBmNmFlMGRkYmQzMjRlN2Q1NDUxNjMwZjA.png',
       link: 'https://www.whitesourcesoftware.com/resources/blog/open-source-licenses-explained/#Eclipse_Public_License_EPL'
     }
-  }];
+  };
 
   if (!license) {
     return '';
   }
 
-//   types.map(names => {
-//     if (license === types.name){
-// return'title matches'
-//     }
-//   })
-
-
   return `
-  ![Badge](${types[0].badge}) 
-  More infomration for this license can be found [here](${types[0].link}) 
+  ## License <a name='license'></a>
+  This porjects operates under:
+  The ${types[license].name}.
+  ![Badge](${types[license].badge}) 
+
+  More infomration for this license can be found [HERE](${types[license].link}) 
     `;
   }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (!license) {
-    return '';
-  }
-    return `
-  ## License
-  This porjects operates under:
-  The ${license}.
-  `;
-}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
+// Geenerates the markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.appName}
   ---
-  ${renderLicenseLink(data.appLicense)}
-  ${renderLicenseBadge(data.appLicense)}
 
- 
-  ## Description
+  ${renderlicenseSection(data.appLicense)}
+
+  ## Table of Content
+  1. [Description](#descrption)
+  2. [Installation](#installation)
+  3. [Usage Tips](#usage)
+  4. [How to Contribute](#contributing)
+  10. [Questions](#questions)
+  11. [Tests](#test)
+  12. [Questions](#questions) 
+
+  ## Description <a name='description'></a>
   ${data.appDescription}
 
  
-  ## Installation
+  ## Installation Process <a name='installation'></a>
   ${data.appInstal} 
  
 
-  ## Usage
+  ## Usage <a name='usage'></a>
   ${data.appUsage}
  
 
-  ## Contributing
+  ## How to Contribute <a name='contributing'></a>
   ${data.appContribute} 
 
 
-  ## Tests
+  ## Suggested Tests <a name='test'></a>
   ${data.appTest}
 
-  ## Questions
+  ## Questions <a name='questions'></a>
 
   ### Github Page
   Message me on Github: [${data.github}](https://github.com/${data.github})
