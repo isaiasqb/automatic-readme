@@ -66,7 +66,7 @@ return inquirer
         type:'list',
         name:'appLicense',
         message:'What type of license do you have for this app?',
-        choices: ['GNU', 'Mozilla PL', 'Apache', 'MIT', 'Boost Software', 'Unilicense'],
+        choices: ['GNU', 'CDDL', 'Apache', 'MIT', 'Ms_PL', 'BSD', 'EPL'],
         when: ({ appIsLicense }) => {
           if (appIsLicense){
             return true
