@@ -1,7 +1,7 @@
 // // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-// const fs = require('fs');
-// const generateMarkdown = require('../Develop/utils/generateMarkdown')
+const fs = require('fs');
+const generateMarkdown = require('../Develop/utils/generateMarkdown')
 
 // // TODO: Create an array of questions for user input
 // const questions = [];
@@ -21,46 +21,41 @@ return inquirer
           }
         }
       },
-      // {
-      //   type:'input',
-      //   name:'appDescription',
-      //   message:'Please provide a brief description of your application:'
-      // },
-      // {
-      //   type:'input',
-      //   name:'appInstal',
-      //   message:'What are the steps required to install your project?'
-      // },
-      // {
-      //   type:'input',
-      //   name:'appUsage',
-      //   message:'Provide instructions and examples for use'
-      // },
-      // {
-      //   type:'input',
-      //   name:'appName',
-      //   message:'What is the name of your project/application?'
-      // },
-      // {
-      //   type:'input',
-      //   name:'appContribute',
-      //   message:'How can people contribute to your application?'
-      // },
-      // {
-      //   type:'input',
-      //   name:'appTest',
-      //   message:'Any test to run for your application?'
-      // },
-      // {
-      //   type:'input',
-      //   name:'github',
-      //   message:'What is your Github username?'
-      // },
-      // {
-      //   type:'input',
-      //   name:'email',
-      //   message:'What is your email?'
-      // },
+      {
+        type:'input',
+        name:'appDescription',
+        message:'Please provide a brief description of your application:'
+      },
+      {
+        type:'input',
+        name:'appInstal',
+        message:'What are the steps required to install your project?'
+      },
+      {
+        type:'input',
+        name:'appUsage',
+        message:'Provide instructions and examples for use'
+      },
+      {
+        type:'input',
+        name:'appContribute',
+        message:'How can people contribute to your application?'
+      },
+      {
+        type:'input',
+        name:'appTest',
+        message:'Any test to run for your application?'
+      },
+      {
+        type:'input',
+        name:'github',
+        message:'What is your Github username?'
+      },
+      {
+        type:'input',
+        name:'email',
+        message:'What is your email?'
+      },
       {
         type:'confirm',
         name:'appIsLicense',
@@ -101,33 +96,11 @@ return inquirer
 
 
 
-askInputQuestions()
-  .then(info => {
-    console.log(info)
-    // if (info.appIsLicense){
-    //   return askLicenseInfo()
-    // } else {
-    //   return
-    // }
-  })
-  // // .then(askLicenseInfo)
-  // .then(infoLicense => console.log(infoLicense));
+
 
 // // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
 
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
-
-
-
-
-
-//Experimental Code......
 
 // const generateReadMeFile = generateMarkdown(data);
 
@@ -135,6 +108,37 @@ askInputQuestions()
 //   if (err) throw err;
 //   console.log('test read me file generated')
 // });
+
+
+
+// // TODO: Create a function to initialize app
+// function init() {}
+
+// // Function call to initialize app
+// init();
+askInputQuestions()
+  // .then(info => {
+  //   // console.log(info)
+  //   // if (info.appIsLicense){
+  //   //   return askLicenseInfo()
+  //   // } else {
+  //   //   return
+  //   // }
+  // })
+  // .then(askLicenseInfo)
+  .then(info => {
+    console.log(info);
+    fs.writeFile('../dist/README.md', generateMarkdown(info), err => {
+        if (err) throw err;
+        console.log('test read me file generated')
+      });
+  });
+
+
+
+
+//Experimental Code......
+
 
 
 

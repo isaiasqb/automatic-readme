@@ -7,7 +7,9 @@
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -16,53 +18,44 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
-    # ${data}
-    # ${data} $pjctLicenseBdg
+    # ${data.appName}
 
     ## License 
-    $pjctLicense}
+    ${data.appLicense}
+    $pjctLicenseBdg
     $pjctLicenseLink}
-    ---
 
     ## Description
-    ${data}
+    ${data.appDescription}
   
-    ---
+   
   
     ## Installation
-    $pjctInstal} 
+    ${data.appInstal} 
   
-    ---
+    
   
     ## Usage
-    $pjctUsage}
-  
-    ---
-  
-    ## Contributing
-    $pjctContribute} 
-  
-    ---
-  
-    ## Tests
-    $pjctTest}
-  
-    ---
+    ${data.appUsage}
 
   
+    ## Contributing
+    ${data.appContribute} 
+  
+  
+    ## Tests
+    ${data.appTest}
+ 
     ## Questions
     ### Github Page
    
-    Message me on Github: [$github}](https://github.com/$github})
+    Message me on Github: [${data.github}](https://github.com/${data.github})
    
     ### Email Adress
     Send Me an email to:
-    ~~~
-    $email}
-    ~~~
-  
-    WHEN I click on the links in the Table of Contents
-    THEN I am taken to the corresponding section of the README
+    ${data.email}
+
+
 `;
 }
 
