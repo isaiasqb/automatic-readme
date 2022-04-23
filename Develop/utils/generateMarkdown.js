@@ -47,10 +47,10 @@ function renderlicenseSection(license) {
   return `
   ## License <a name='license'></a>
   This porjects operates under:
-  The ${types[license].name}.
+  **The ${types[license].name}.**
   ![Badge](${types[license].badge}) 
 
-  More infomration for this license can be found [HERE](${types[license].link}) 
+  More infomration for this license can be found *[HERE](${types[license].link})* 
     `;
   }
 
@@ -60,7 +60,7 @@ function renderlicenseSection(license) {
 function generateMarkdown(data) {
   return `
   # ${data.appName}
-  ---
+  * * *
 
   ${renderlicenseSection(data.appLicense)}
 
@@ -72,25 +72,27 @@ function generateMarkdown(data) {
   10. [Questions](#questions)
   11. [Tests](#test)
   12. [Questions](#questions) 
+  * * *
 
   ## Description <a name='description'></a>
   ${data.appDescription}
-
+  * * *
  
   ## Installation Process <a name='installation'></a>
   ${data.appInstal} 
- 
+  * * *
 
   ## Usage <a name='usage'></a>
   ${data.appUsage}
- 
+  * * *
 
   ## How to Contribute <a name='contributing'></a>
   ${data.appContribute} 
-
+  * * *
 
   ## Suggested Tests <a name='test'></a>
   ${data.appTest}
+  * * *
 
   ## Questions <a name='questions'></a>
 
