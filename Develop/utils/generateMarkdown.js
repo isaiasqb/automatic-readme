@@ -97,11 +97,12 @@ function generateMarkdown(data) {
   ## Questions <a name='questions'></a>
 
   ### Github Page
-  Message me on Github: [${data.github}](https://github.com/${data.github})
+  Message me on Github: 
+  > [${data.github}](https://github.com/${data.github})
   
   ### Email Adress
   Send Me an email to:
-  ${data.email}
+  > ${data.email}
   `;
 };
 
