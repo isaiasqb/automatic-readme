@@ -15,7 +15,7 @@ This is an application that allows you to create a complete README file from the
 ---
 ## Functionality
 
-The application will be invoked by using the following command:
+The application will be invoked inside the **develop folder** by using the following command:
 ~~~bash
 node index.js
 ~~~
@@ -63,9 +63,9 @@ The walkthrough video must demonstrate how a user would enter responses to all o
 
 The walkthrough video must demonstrate a generated README that matches the user input and has a functioning table of contents.
 
+To watch the vcideo, [Click here](https://drive.google.com/file/d/1GCJ3yfQhg0vMw_ntPZI2HpQthkJYGRdQ/view)
+
 ---
 ## Screenshots
 
-Grading Requirements
-NOTE
-If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
+![command line](../automatic-readme/Develop/misc/Untitled.png)
