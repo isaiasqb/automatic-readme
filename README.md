@@ -14,8 +14,13 @@ This is an application that allows you to create a complete README file from the
 
 ---
 ## Functionality
-
-The application will be invoked inside the **develop folder** by using the following command:
+###  Prerequisites
+  The application will be invoked inside the **develop folder**, run only for the first time:
+  ~~~bash
+  npm i
+  ~~~
+  * * *
+Then start the application by using the following command:
 ~~~bash
 node index.js
 ~~~
